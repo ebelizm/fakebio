@@ -1,0 +1,242 @@
+/* Portfolio enhancements for Ebelizm */
+
+/* Spotlight — readable text over background images */
+.panel.spotlight.right .content {
+	background-image: linear-gradient(
+		90deg,
+		rgba(46, 43, 55, 0) 0%,
+		rgba(46, 43, 55, 0.55) 35%,
+		rgba(46, 43, 55, 0.88) 60%,
+		rgba(46, 43, 55, 0.94) 100%
+	);
+}
+
+.panel.spotlight.left .content {
+	background-image: linear-gradient(
+		-90deg,
+		rgba(46, 43, 55, 0) 0%,
+		rgba(46, 43, 55, 0.55) 35%,
+		rgba(46, 43, 55, 0.88) 60%,
+		rgba(46, 43, 55, 0.94) 100%
+	);
+}
+
+.panel.spotlight .content h2.major,
+.panel.spotlight .content p,
+.panel.spotlight .content li {
+	color: rgba(255, 255, 255, 0.92);
+}
+
+.panel.spotlight .content h2.major:after {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.panel.spotlight .terminal-block {
+	background: rgba(0, 0, 0, 0.55);
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+.panel.spotlight .terminal-block .output {
+	color: rgba(255, 255, 255, 0.78);
+}
+
+@media screen and (max-width: 736px) {
+	.panel.spotlight .content {
+		background-image: linear-gradient(
+			0deg,
+			rgba(46, 43, 55, 0.94) 0%,
+			rgba(46, 43, 55, 0.82) 45%,
+			rgba(46, 43, 55, 0.35) 100%
+		) !important;
+	}
+}
+
+/* Faster entry — default preload transition feels sluggish on first scroll */
+body.is-preload:before {
+	transition-delay: 0s !important;
+	transition-duration: 0.35s !important;
+}
+
+#wrapper {
+	transition-delay: 0s !important;
+	transition-duration: opacity 0.35s ease-out, transform 0.4s ease-out !important;
+}
+
+.hero-tagline {
+	margin-top: 0.5rem;
+	font-size: 1.15rem;
+	color: rgba(255, 255, 255, 0.65);
+	min-height: 1.6em;
+}
+
+.hero-tagline .typing-text {
+	color: #ffe4b4;
+	font-weight: 400;
+}
+
+.typing-cursor {
+	display: inline-block;
+	width: 2px;
+	height: 1em;
+	margin-left: 2px;
+	background: #e37b7c;
+	vertical-align: text-bottom;
+	animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+	50% { opacity: 0; }
+}
+
+.stat-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.stat-grid li {
+	text-align: center;
+	padding: 1.25rem 0.75rem;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 0.25rem;
+	background: rgba(255, 255, 255, 0.04);
+	transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.stat-grid li:hover {
+	transform: translateY(-4px);
+	border-color: rgba(255, 255, 255, 0.28);
+}
+
+.stat-number {
+	display: block;
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.1;
+	color: #ffe4b4;
+	font-family: 'Courier New', monospace;
+}
+
+.stat-label {
+	display: block;
+	margin-top: 0.35rem;
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.terminal-block {
+	background: rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 0.25rem;
+	padding: 1.25rem 1.5rem;
+	font-family: 'Courier New', monospace;
+	font-size: 0.9rem;
+	line-height: 1.7;
+	overflow-x: auto;
+}
+
+.terminal-block .prompt {
+	color: #e37b7c;
+}
+
+.terminal-block .cmd {
+	color: #ffe4b4;
+}
+
+.terminal-block .output {
+	color: rgba(255, 255, 255, 0.55);
+}
+
+.status-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.35rem 0.85rem;
+	border-radius: 2rem;
+	background: rgba(46, 204, 113, 0.15);
+	border: 1px solid rgba(46, 204, 113, 0.35);
+	font-size: 0.85rem;
+	margin-top: 0.75rem;
+}
+
+.status-pill .dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #2ecc71;
+	animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+	0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.5); }
+	50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
+}
+
+.project-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.project-list li {
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.project-list li:last-child {
+	border-bottom: none;
+}
+
+.project-list h3 {
+	margin: 0 0 0.35rem 0;
+	font-size: 1rem;
+	color: rgba(255, 255, 255, 0.95);
+}
+
+.project-list p {
+	margin: 0;
+	font-size: 0.9rem;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.project-tags {
+	margin-top: 0.5rem;
+}
+
+.project-tags span {
+	display: inline-block;
+	font-size: 0.7rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	padding: 0.2rem 0.5rem;
+	margin-right: 0.35rem;
+	border-radius: 0.15rem;
+	background: rgba(46, 43, 55, 0.25);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	color: rgba(255, 255, 255, 0.88);
+}
+
+/* Projects panel — intro heading contrast on color2 */
+.panel.color2-alt > .intro.color2 h2.major,
+.panel.color2-alt > .intro.color2 p {
+	color: rgba(255, 255, 255, 0.95);
+}
+
+.panel.color2-alt > .intro.color2 h2.major:after {
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 736px) {
+	.stat-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.stat-number {
+		font-size: 2rem;
+	}
+}
