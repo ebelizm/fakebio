@@ -27,7 +27,7 @@
 						enabled: true,
 
 					// Sets the scroll wheel factor. (Ideally) a value between 0 and 1 (lower = slower scroll, higher = faster scroll).
-						factor: 1
+						factor: 0.55
 
 				},
 
@@ -49,7 +49,7 @@
 						enabled: true,
 
 					// Sets the momentum factor. Must be a value between 0 and 1 (lower = less momentum, higher = more momentum, 0 = disable momentum scrolling).
-						momentum: 0.875,
+						momentum: 0.68,
 
 					// Sets the drag threshold (in pixels).
 						threshold: 10
@@ -84,11 +84,11 @@
 			xshort:   '(min-aspect-ratio: 16/6)'
 		});
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
+	// Play initial animations on page load (DOM ready — don't wait for external images).
+		$(function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
-			}, 100);
+			}, 50);
 		});
 
 	// Tweaks/fixes.
